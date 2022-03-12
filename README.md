@@ -1,18 +1,16 @@
 # ATP-Cup
 Creating automated results at a tennis tournament
 
-Pentru a putea rezolva problema propusa, am creat mai multe fisiere .c si .h
-Fisierele list stack si bst contin functiile si structurile necesare pentru lucrul cu:
-1. o lista dublu inlantuita circulara cu santinela ce contine ca valori structuri de tip tara din campionat
-2. o stiva care va contine lista tarilor 
-3. o stiva pentru castigatorii meciurilor
-4. o stiva auxialara pentru aputea retine ultime 4 tari din capionat necesare pentru a patra cerinta
-5. un BST in care sa se introduca jucatorii acelor 4 tari
+In order to solve the proposed problem, we created several .c and .h files
+The list stack and bst files contain the functions and structures needed to work with:
+1. a double chained circular list with sentinel that contains as values country-type structures in the championship
+2. a stack that will contain the list of countries
+3. a stack for match winners
+4. an auxiliary stack for retaining the last 4 countries in the caption required for the fourth requirement
+5. a BST in which to introduce the players of those 4 countries
 
 
-Fiserele structures.h si utils.h desemneaza structurile Country si Player, respectiv bibliotecile standard de care este nevoie in majoritatea celorlalte functiilor.
-- Functia readQuery realizeaza citirea fisierului cerinte.in si apeleaza functiile "mari" ce rezolva cerintele. Am parcurs rand pe rand fiecare valoare de 1 din acest fisier pentru a asigura o particularizare a fiecarei cerinte si pentru a aloca corespunzator variabilele necesare. Daca cerinta 2 si 4 se legau de cerinta 1 si 3, le-am tratat in legatura una cu alta. De aceea nu exista si o functie task4. I
-- Functia removeMin ajuta la eliminarea tarilor care corespund cerintei 2.
-- Pentru task3 si task5 am avut nevoie si de alte functii pentru a afla scorul maxim dintre doua tari sau scorul maxim al jucatorilor din doua echipe. 
-- Initial introduc in coada doar primul jucator din prima echipa si apoi ii includpe rand pe toti jucatorii din cealalta echipa, realizand meciurile. Urmatorul pas este sa scot din coada primul jucator din echipa 1, sa adaug la final al doilea jucator si sa realizez meciul cu primul jucator din a doua echipa ce se afla acum in varful cozii. Scot si acest jucator din echipa 2 si il audaug la finalul cozii, insa retin inainte valoarea jucatorului din echipa 1 si o adaug iar in coada. Se repeta pana cand am terminat de jucat toate meciurile ce il includ pe al doilea jucator. Pentru restul jucatorilor din prima echipa, voi scoate in primul rand varful din coada pentru ca acesta contine un coechipier.Acum un jucator din a doua echipa cu care pot avea un meci. Se continua procedeul, retinand si readaugand acel jucator din prima echipa. 
+The structures.h and utils.h files designate the Country and Player structures, respectively the standard libraries needed in most other functions.
+- The readQuery function reads the requirements.in file and calls the "big" functions that solve the requirements. We went through each value of 1 in this file one by one to ensure a customization of each requirement and to allocate the necessary variables accordingly. 
+- Initially, I put only the first player from the first team in the queue and then I include all the players from the other team in turn, making the matches. The next step is to remove the first player from team 1 from the queue, add the second player at the end and make the match with the first player from the second team that is now at the top of the queue. I also remove this player from team 2 and listen to him at the end of the queue, but I retain the value of the player from team 1 and add it again in the queue. It is repeated until I have finished playing all the matches that include the second player. For the rest of the first team players, I will first remove the tip of the queue because it contains a teammate. Now a player from the second team with whom I can have a match. The process is continued, retaining and restoring that player from the first team.
 
